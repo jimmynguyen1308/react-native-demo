@@ -15,7 +15,7 @@ export default function ButtonSection() {
   return (
     <View style={styles.section}>
       <View style={styles.flexContainer}>
-        <Text style={styles.heading}>Button Section</Text>
+        <Text style={styles.heading}>Button Types</Text>
         <Button
           title="Help?"
           onPress={() =>
