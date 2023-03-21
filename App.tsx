@@ -29,8 +29,14 @@ export default function App() {
             title: "Dashboard",
             headerRight: () => (
               <Button
-                onPress={() => Alert.alert("You pressed the button")}
-                title="Info"
+                onPress={() =>
+                  Alert.alert(
+                    "Instructions",
+                    "Go through each section of the dashboard. Select a profile to get to a new page.",
+                    [{ text: "OK, got it!" }]
+                  )
+                }
+                title="Instructions"
                 color="#ffffff"
               />
             ),
@@ -39,11 +45,33 @@ export default function App() {
         <Stack.Screen
           name="Profile"
           component={ProfileScreen}
-          options={({ route }) => ({
+          options={({ navigation, route }) => ({
             title: route.params.name + "'s Profile",
             headerStyle: {
               backgroundColor: "#ef476f",
             },
+            headerRight: () => (
+              <Button
+                onPress={() =>
+                  Alert.alert(
+                    "Message Alert Title",
+                    "Do you want to go back to homepage?",
+                    [
+                      {
+                        text: "No, not yet",
+                        style: "cancel",
+                      },
+                      {
+                        text: "Yes please!",
+                        onPress: () => navigation.navigate("Home"),
+                      },
+                    ]
+                  )
+                }
+                title="Go Home"
+                color="#ffffff"
+              />
+            ),
           })}
         />
       </Stack.Navigator>
