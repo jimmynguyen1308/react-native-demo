@@ -8,14 +8,15 @@ import {
   TouchableHighlight,
   TouchableOpacity,
 } from "react-native"
+import { globals } from "../../styles/globals"
 
 export default function ButtonSection() {
   const [count1, setCount1] = React.useState<number>(0)
   const [count2, setCount2] = React.useState<number>(0)
   return (
-    <View style={styles.section}>
-      <View style={styles.flexContainer}>
-        <Text style={styles.heading}>Button Types</Text>
+    <View style={globals.section}>
+      <View style={globals.flexContainer}>
+        <Text style={globals.heading}>Button Types</Text>
         <Button
           title="Help?"
           onPress={() =>
@@ -31,7 +32,7 @@ export default function ButtonSection() {
         Illustrating different types of buttons, including: Button,
         TouchableHighlight and TouchableOpacity.
       </Text>
-      <View style={styles.flexContainer}>
+      <View style={globals.flexContainer}>
         <TouchableHighlight
           style={styles.button}
           onPress={() => setCount1(count1 + 1)}
@@ -54,21 +55,6 @@ export default function ButtonSection() {
 }
 
 const styles = StyleSheet.create({
-  section: {
-    // flex: 1,
-    borderBottomWidth: 2,
-    borderBottomColor: "#ccc",
-  },
-  flexContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginBottom: 20,
-  },
-  heading: {
-    fontSize: 30,
-    fontWeight: "bold",
-  },
   button: {
     width: "40%",
     padding: 10,
