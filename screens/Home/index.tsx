@@ -13,8 +13,8 @@ type HomeScreenTypes = {
 export default function HomeScreen({ navigation }: HomeScreenTypes) {
   return (
     <ScrollView style={globals.container}>
-      <ButtonSection />
       <InputSection />
+      <ButtonSection />
       <Button
         title="Go to Jane's profile"
         onPress={() => navigation.navigate("Profile", { name: "Jane" })}
