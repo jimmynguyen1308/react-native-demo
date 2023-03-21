@@ -3,10 +3,11 @@ import { Button, Text, View, ScrollView } from "react-native"
 import { NavigationProp } from "@react-navigation/native"
 import ButtonSection from "./ButtonSection"
 import InputSection from "./InputSection"
+import ProfileSection from "./NavigationSection"
 import { RootStackParamList } from "../../types/stack.types"
 import { globals } from "../../styles/globals"
 
-type HomeScreenTypes = {
+export type HomeScreenTypes = {
   navigation: NavigationProp<RootStackParamList, "Home">
 }
 
@@ -15,10 +16,7 @@ export default function HomeScreen({ navigation }: HomeScreenTypes) {
     <ScrollView style={globals.container}>
       <InputSection />
       <ButtonSection />
-      <Button
-        title="Go to Jane's profile"
-        onPress={() => navigation.navigate("Profile", { name: "Jane" })}
-      />
+      <ProfileSection navigation={navigation} />
     </ScrollView>
   )
 }
