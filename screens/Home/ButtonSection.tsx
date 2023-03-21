@@ -8,6 +8,7 @@ import {
   TouchableHighlight,
   TouchableOpacity,
 } from "react-native"
+import HelpButton from "../../components/HelpButton"
 import { globals } from "../../styles/globals"
 
 export default function ButtonSection() {
@@ -17,15 +18,10 @@ export default function ButtonSection() {
     <View style={globals.section}>
       <View style={globals.flexContainer}>
         <Text style={globals.heading}>Button Types</Text>
-        <Button
-          title="Help?"
-          onPress={() =>
-            Alert.alert(
-              "Instructions",
-              "Press button to increase count. Long press button to reset to 0.",
-              [{ text: "OK, got it!" }]
-            )
-          }
+        <HelpButton
+          title="Instructions"
+          description="Press button to increase count. Long press button to reset to 0."
+          buttons={[{ text: "OK, got it!" }]}
         />
       </View>
       <Text style={{ marginBottom: 20 }}>
