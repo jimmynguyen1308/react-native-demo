@@ -6,8 +6,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { SafeAreaProvider } from "react-native-safe-area-context"
 import { Provider } from "react-redux"
 import { store } from "./store"
-import Homescreen from "./screens/Homescreen"
-import Mapscreen from "./screens/Mapscreen"
+import HomeScreen from "./screens/HomeScreen"
+import MapScreen from "./screens/MapScreen"
 
 export default function App() {
   const Stack = createNativeStackNavigator()
@@ -19,14 +19,14 @@ export default function App() {
           <Stack.Navigator>
             <Stack.Screen
               name="HomeScreen"
-              component={Homescreen}
+              component={HomeScreen}
               options={{
                 headerShown: false,
               }}
             />
             <Stack.Screen
               name="MapScreen"
-              component={Mapscreen}
+              component={MapScreen}
               options={{
                 headerShown: false,
               }}
